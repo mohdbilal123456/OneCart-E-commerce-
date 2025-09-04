@@ -17,9 +17,13 @@ let app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
- origin:["https://onecart-e-commerce-2.onrender.com" , "https://onecart-e-commerce-admin.onrender.com"],
- credentials:true
+  origin: [
+    "https://onecart-e-commerce-frontend.onrender.com", // frontend
+    "https://onecart-e-commerce-admin.onrender.com"     // admin
+  ],
+  credentials: true
 }))
+
 
 app.use("/api/auth",authRoutes)
 app.use("/api/user",userRoutes)
